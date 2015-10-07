@@ -17,17 +17,14 @@ public class Kata2 {
      */
     public static void main(String[] args) {
         //Vector de enteros
-        Integer[] vector = {1, 1, 12, 2, 3, 4, 5, 100, 100};
+        Integer[] vector = {1, 1, 12, 2, 3, 4, 5, 100, 100, 100,12};
 
         //Vectores de Strings
-        String[] vector1 = {"Ana","Juan","Pedro","Lucía","Pedro","Lucía"};
-        
-        //Creamos un objeto de tipo Histogram
-        Histogram histo = new Histogram(vector1);
-        
-        
-        HashMap<Object, Integer> histogram = histo.getHisto();
+        String[] vector1 = {"Ana", "Juan", "Pedro", "Lucía", "Pedro", "Lucía"};
 
+        Histogram<Integer> histogram = CalculaHistogram.computeHisto(vector);
+
+        //Recorremos el histograma para mostrar los resultados
         for (Object key : histogram.keySet()) {
             System.out.println(key + " : " + histogram.get(key));
         }
